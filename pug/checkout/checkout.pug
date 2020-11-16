@@ -1,0 +1,95 @@
+doctype html
+html
+    head
+        meta(charset="UTF-8")
+        meta(name="viewport" content="width=device-width, initial-scale=1.0")
+        title Checkout
+        link(rel="stylesheet", href="./css/pages/reset.css")
+        link(rel="stylesheet", href="./css/pages/header.css")
+        link(rel="stylesheet", href="./css/pages/checkout.css")
+        link(rel="stylesheet", href="./css/pages/footer.css")
+        script(src="https://kit.fontawesome.com/b4b7fd911f.js")
+    body
+        header
+            include ../header/_headerTop.jade
+            // End Top Header 
+            include ../header/_headerBottom.jade
+            // End Bottom Header
+        
+        main
+            .container
+                div
+                    ul.breadcrumb
+                        li
+                            a(href="home.html") Trang chủ /
+                        li
+                            a(href="checkout.html") &nbsp; Thanh toán 
+                div
+                    h2.title__arrow Thanh toán
+
+                    #myModal.modal
+                        .modal-content
+                            span.close &times;
+                            h5.modal__title
+                            p.modal__content
+                            .modal__btn
+                                button.btn.btn__agree(type='button') Xác nhận
+                                button.btn.btn__cancel(type='button') Huỷ
+                    
+                    div.row
+                        div.col
+                            div
+                                h4.form__title ĐỊA CHỈ CỦA BẠN
+                                form
+                                    div
+                                        label(for="rowName") Họ và tên:
+                                        p#errorName
+                                        input(type="text" id="rowName")
+                                    div
+                                        label(for="inputCity") Tỉnh - Thành phố:
+                                        select( id="inputCity")
+                                    div
+                                        label(for="inputDistrict") Quận - Huyện:
+                                        select( id="inputDistrict")
+                                    div
+                                        label(for="commune") Xã - Phường:
+                                        select( id="commune")
+                                    div
+                                        label(for="rowPhone") Số điện thoại:
+                                        p#errorPhone
+                                        input(type="number" id="rowPhone")
+                            
+                            div
+                                h4.form__title THANH TOÁN ONLINE
+                                form
+                                    div
+                                        label(for="rowCardType") Card type:
+                                        <select id="rowCardType">
+                                            <option value="5">Visa</option>
+                                            <option value="6">MasterCard</option>
+                                            <option value="7">American Express</option>
+                                            <option value="8">Discover</option>
+                                        </select>
+                                    div
+                                        label(for="rowCardNumber") Credit Card Number:
+                                        p#errorCardNumber
+                                        input(type="number" id="rowCardNumber")
+                                    div
+                                        label(for="rowCardCVV") Card CVV:
+                                        p#errorCardCVV
+                                        input(type="number" id="rowCardCVV")
+                                    div
+                                        label(for="rowExpiration") Expiration Date:
+                                        input(type="date" id="rowExpiration")
+                            div
+                                button(type="button").btn.btn__agree.btn__check Thanh Toán
+                        
+                        div.col
+                            table
+                                thead
+                                tbody
+
+        footer
+            include ../footer/_footer.jade
+
+        script(src="./js/mainCheckout.js")

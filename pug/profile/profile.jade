@@ -1,0 +1,75 @@
+doctype html
+html
+    head
+        meta(charset="UTF-8")
+        meta(name="viewport" content="width=device-width, initial-scale=1.0")
+        //-meta(http-equiv="X-UA-Compatible" content="ie=edge")
+        title Profile
+        link(rel="stylesheet", href="./css/pages/reset.css")
+        link(rel="stylesheet", href="./css/pages/header.css")
+        link(rel="stylesheet", href="./css/pages/profile.css")
+        link(rel="stylesheet", href="./css/pages/footer.css")
+        script(src="https://kit.fontawesome.com/b4b7fd911f.js")
+    body
+        header
+            include ../header/_headerTop.jade
+            // End Top Header 
+            include ../header/_headerBottom.jade
+            // End Bottom Header
+
+            main
+            .container
+                div
+                    ul.breadcrumb
+                        li
+                            a(href="home.html") Trang chủ /
+                        li
+                            a(href="profile.html") &nbsp; Địa chỉ
+                div
+                    h2.title__arrow ĐỊA CHỈ
+
+                -var list = {"Tên" : "Giang", "Họ & tên đệm": "Lê Anh", "Công ty": "Công ty ABC", "Địa chỉ": "xxxxxxxxxxx", "Thành Phố": "Đà Nẵng", "Quốc tịch": "Việt Nam", "Postal/Zip code": 120796, "Phone": '0375375375' }
+                .form
+                    .form__one
+                        h4.form__title ĐỊA CHỈ CỦA BẠN
+                        form        
+                            each n, i in list
+                                div
+                                    span= i
+                                    input(type="text" value=`${n}`)
+                            div.form__btn
+                                button.btn.btn__cart(type='button') Chỉnh sửa địa chỉ
+                                button.btn.btn__cart(type='button') Xoá
+                    .form__two
+                        .form__link
+                            a(href="#") Thêm địa chỉ
+                        form        
+                            each n, i in list
+                                div
+                                    span= i
+                                    input(type="text" value=`${n}`)
+                            div.form__btn
+                                button.btn.btn__cart(type='button') Cập nhập địa chỉ
+                                button.btn.btn__cart(type='button') Thoát
+                div
+                    .form__three
+                        form        
+                            each n, i in list
+                                div
+                                    span= i
+                                    input(type="text" value=`${n}`)
+                        .form__link
+                            a(href="#") Chỉnh sửa địa chỉ
+                div
+                    .form__four
+                        form        
+                            each n, i in list
+                                div
+                                    span= i
+                                    input(type="text" value=`${n}`)
+                        .form__link
+                            a(href="#") Chỉnh sửa địa chỉ
+
+        footer
+            include ../footer/_footer.jade
+            

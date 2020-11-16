@@ -1,0 +1,56 @@
+.footer_top
+    .container
+        .footer_top__item
+            img(src="./images/Layer 511X.png", alt="img511")
+.footer_content.container
+        .footer_content__item
+            p.footer_content__title THÔNG TIN
+            nav
+                ul
+                    -var list=["VỀ CHÚNG TÔI", "GIAO HÀNG", "CẢM NGHĨ", "LƯU TRỮ", "CHÍNH SÁCH RIÊNG TƯ"]
+                    each item in list
+                        li
+                            a(href="#")=item 
+                    
+        .footer_content__item
+            p.footer_content__title MUA HÀNG
+            nav
+                ul
+                    -var list=["VẬN CHUYỂN VÀ TRA HÀNG", "MUA HÀNG AN TOÀN", "VẬN CHUYỂN QUỐC TẾ", "LIÊN KẾT" , "DỊCH VỤ GIẢM GIÁ"]
+                    each item in list
+                        li
+                            a(href="#")=item
+                     
+        .footer_content__item
+            p.footer_content__title GỬI MAIL
+            p.footer_content__desc Gửi email cho chúng tôi để được hỗ trợ
+            div.footer_content__input
+                input(type="email" placeholder="Enter your email")
+                button(type="button").btn.footer_content__btn Gửi
+            .footer_content__icon
+                -var list=["fab fa-twitter", "fab fa-google-plus-g", "fab fa-linkedin-in", "fas fa-wifi"]
+                    each item in list
+                        i(class=`${item}`)
+        .footer_content__item
+            p.footer_content__title LIÊN HỆ
+            p.footer_content__detail
+                i.fas.fa-map-marker-alt 
+                span 4, Toà nhà Hannoi Group Số 442 Đội Cấn, P.Cống Vị, Q.Ba Đình, Hà Nội
+            p.footer_content__detail
+                i.fas.fa-phone-alt
+                | (04) 6674 2332 - &nbsp;
+                i.fas.fa-phone-alt
+                | (04) 3786 8904
+                br
+                i.fas.fa-phone-alt
+                | (04) 6680 9686 &nbsp; &nbsp;
+                i.fas.fa-envelope 
+                i Support@bizweb.vn
+
+.footer_bottom
+    .container
+        p.footer_bottom__text.
+            &copy;  Copyright 2008-2014 DKT Technology JSC
+        .footer_bottom__icon
+            img(src="./images/Layer 54.png", alt="Layer54")
+            

@@ -1,0 +1,128 @@
+* {
+  font-family: 'Times New Roman', Arial;
+}
+
+@media screen and (min-width: 320px) {
+  .container {
+    max-width: 320px;
+    margin: 0 auto;
+  }
+}
+
+@media screen and (min-width: 480px) {
+  .container {
+    max-width: 480px;
+    margin: 0 auto;
+  }
+}
+
+@media screen and (min-width: 576px) {
+  .container {
+    max-width: 540px;
+    margin: 0 auto;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .container {
+    max-width: 720px;
+    margin: 0 auto;
+  }
+}
+
+@media screen and (min-width: 992px) {
+  .container {
+    max-width: 960px;
+    margin: 0 auto;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .container {
+    max-width: 1140px;
+    margin: 0 auto;
+  }
+}
+
+.breadcrumb {
+  overflow: hidden;
+  margin: 20px auto;
+}
+
+.breadcrumb li {
+  float: left;
+}
+
+.breadcrumb li:last-child a {
+  color: #E6AE48;
+}
+
+.breadcrumb a {
+  font-size: 14px;
+  color: #818181;
+}
+
+.title__block {
+  margin: 20px auto;
+  font-size: 21px;
+  color: #000;
+  text-align: center;
+  padding-bottom: 10px;
+  background-image: url(../../images/title-dark.png);
+  background-repeat: no-repeat;
+  background-position: center bottom;
+}
+
+.title__arrow {
+  font-size: 25px;
+  color: #000;
+  display: inline-block;
+  padding-bottom: 15px;
+  background-image: url(../../images/titleleft-dark.png);
+  background-repeat: no-repeat;
+  background-position: left bottom;
+}
+
+.intro {
+  margin: 20px 0;
+}
+
+.intro img {
+  width: 100%;
+}
+
+.intro__title {
+  font-size: 24px;
+  color: #252525;
+  margin-bottom: 15px;
+  margin-top: 20px;
+}
+
+.intro__detail {
+  font-size: 14px;
+  color: #818181;
+  line-height: 1.1;
+}
+
+@media screen and (min-width: 768px) {
+  .intro {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+  }
+  .intro__img {
+    -ms-flex-preferred-size: 40%;
+        flex-basis: 40%;
+  }
+  .intro__content {
+    -ms-flex-preferred-size: 58%;
+        flex-basis: 58%;
+  }
+  .intro__title {
+    margin-top: 0;
+  }
+}
+/*# sourceMappingURL=intro.css.map */

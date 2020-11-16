@@ -1,0 +1,225 @@
+.btn {
+  border: none;
+  outline: none;
+  cursor: pointer;
+  border-radius: 2px;
+}
+
+.btn__cart {
+  font-size: 12px;
+  color: #fff;
+  background: #000;
+  padding: 10px 15px;
+}
+
+.btn__list {
+  background-color: #fff;
+  color: #818181;
+  border: 1px solid #E6E6E6;
+  margin: 3px 0;
+}
+
+.btn__list:hover {
+  color: #fff;
+  background-color: #E6AE48;
+}
+
+.btn__more {
+  background-color: transparent;
+  color: #a7a7a7;
+  padding-left: 0;
+}
+
+.btn__agree {
+  color: #28a745;
+  border-color: #28a745;
+  padding: 5px 10px;
+}
+
+.btn__agree:hover {
+  color: #fff;
+  background-color: #28a745;
+  border-color: #28a745;
+}
+
+.btn__cancel {
+  color: #ffc107;
+  border-color: #ffc107;
+  padding: 5px 10px;
+}
+
+.btn__cancel:hover {
+  color: #fff;
+  background-color: #ffc107;
+  border-color: #ffc107;
+}
+
+.footer_top {
+  display: none;
+}
+
+.footer_content__item {
+  line-height: 1.2;
+  margin-bottom: 20px;
+}
+
+.footer_content__item a {
+  font-size: 12px;
+  color: #818181;
+}
+
+.footer_content__title {
+  color: #252525;
+  font-size: 18px;
+  margin-bottom: 5px;
+}
+
+.footer_content__desc {
+  font-size: 14px;
+  color: #818181;
+}
+
+.footer_content__detail {
+  color: #494949;
+  font-size: 14px;
+  line-height: 1.4;
+}
+
+.footer_content__detail > .fas {
+  margin-right: 8px;
+}
+
+.footer_content__input {
+  margin: 14px 0;
+}
+
+.footer_content__input > input {
+  padding: 5px 14px;
+  border: 1px solid #252525;
+}
+
+.footer_content__input > input::-webkit-input-placeholder {
+  font-style: italic;
+  color: #818181;
+  font-size: 14px;
+}
+
+.footer_content__input > input:-ms-input-placeholder {
+  font-style: italic;
+  color: #818181;
+  font-size: 14px;
+}
+
+.footer_content__input > input::-ms-input-placeholder {
+  font-style: italic;
+  color: #818181;
+  font-size: 14px;
+}
+
+.footer_content__input > input::placeholder {
+  font-style: italic;
+  color: #818181;
+  font-size: 14px;
+}
+
+.footer_content__btn {
+  background-color: #252525;
+  color: #fff;
+  padding: 5px 10px;
+  margin: 0;
+  position: relative;
+  left: -4px;
+  border: 1px solid #252525;
+  font-size: 14px;
+  border-top-right-radius: 4px;
+  border-bottom-right-radius: 5px;
+}
+
+.footer_content__btn::after {
+  content: '';
+  border-top: 13px solid transparent;
+  border-left: 13px solid #252525;
+  border-bottom: 13px solid transparent;
+  position: absolute;
+  top: 0;
+  right: -13px;
+}
+
+.footer_content__icon > .fab,
+.footer_content__icon > .fas {
+  margin-right: 10px;
+  color: #818181;
+  font-size: 12px;
+  cursor: pointer;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+}
+
+.footer_content__icon > .fab:hover,
+.footer_content__icon > .fas:hover {
+  color: #E6AE48;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+}
+
+.footer_bottom {
+  border-top: 2px solid #E6E6E6;
+  padding: 20px 0;
+}
+
+.footer_bottom > .container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.footer_bottom__text {
+  color: #818181;
+  font-size: 12px;
+}
+
+.footer_bottom__icon {
+  display: none;
+}
+
+@media screen and (min-width: 768px) {
+  .footer_top {
+    display: block;
+  }
+  .footer_top__item {
+    margin: 30px;
+  }
+  .footer_top__item img {
+    width: 100%;
+  }
+  .footer_content {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-flow: row wrap;
+            flex-flow: row wrap;
+  }
+  .footer_content__item {
+    -ms-flex-preferred-size: calc((100% - 10px) / 2);
+        flex-basis: calc((100% - 10px) / 2);
+  }
+  .footer_bottom__icon {
+    display: inline-block;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .footer_content__item {
+    -ms-flex-preferred-size: calc((100% - 10px) / 4);
+        flex-basis: calc((100% - 10px) / 4);
+  }
+}
+/*# sourceMappingURL=footer.css.map */

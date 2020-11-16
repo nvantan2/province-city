@@ -1,0 +1,258 @@
+@charset "UTF-8";
+* {
+  font-family: 'Times New Roman', Arial;
+}
+
+@media screen and (min-width: 320px) {
+  .container {
+    max-width: 320px;
+    margin: 0 auto;
+  }
+}
+
+@media screen and (min-width: 480px) {
+  .container {
+    max-width: 480px;
+    margin: 0 auto;
+  }
+}
+
+@media screen and (min-width: 576px) {
+  .container {
+    max-width: 540px;
+    margin: 0 auto;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .container {
+    max-width: 720px;
+    margin: 0 auto;
+  }
+}
+
+@media screen and (min-width: 992px) {
+  .container {
+    max-width: 960px;
+    margin: 0 auto;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .container {
+    max-width: 1140px;
+    margin: 0 auto;
+  }
+}
+
+.breadcrumb {
+  overflow: hidden;
+  margin: 20px auto;
+}
+
+.breadcrumb li {
+  float: left;
+}
+
+.breadcrumb li:last-child a {
+  color: #E6AE48;
+}
+
+.breadcrumb a {
+  font-size: 14px;
+  color: #818181;
+}
+
+.title__block {
+  margin: 20px auto;
+  font-size: 21px;
+  color: #000;
+  text-align: center;
+  padding-bottom: 10px;
+  background-image: url(../../images/title-dark.png);
+  background-repeat: no-repeat;
+  background-position: center bottom;
+}
+
+.title__arrow {
+  font-size: 25px;
+  color: #000;
+  display: inline-block;
+  padding-bottom: 15px;
+  background-image: url(../../images/titleleft-dark.png);
+  background-repeat: no-repeat;
+  background-position: left bottom;
+}
+
+.order {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  margin: 20px 0;
+}
+
+.order_table {
+  -webkit-box-ordinal-group: 2;
+      -ms-flex-order: 1;
+          order: 1;
+}
+
+.order__heading {
+  background-color: #E6E6E6;
+  border: 1px solid #D6D6D6;
+  border-bottom: none;
+  padding: 20px 10px;
+  margin-top: 20px;
+}
+
+.order__title {
+  font-size: 18px;
+  color: #252525;
+}
+
+.order__desc {
+  font-size: 14px;
+  color: #252525;
+  margin-top: 10px;
+}
+
+.order_customer {
+  background-color: #E6E6E6;
+  border: 1px solid #D6D6D6;
+  padding: 15px;
+}
+
+.order_customer > div {
+  overflow: hidden;
+  margin-top: 5px;
+}
+
+.order__icon {
+  float: left;
+  width: 8%;
+}
+
+.order__detail {
+  float: right;
+  width: 91%;
+}
+
+.order a {
+  color: #252525;
+  font-size: 14px;
+  text-decoration: underline;
+}
+
+@media screen and (max-width: 1000px) {
+  table, thead, tbody, th, td, tr {
+    display: block;
+  }
+  thead tr {
+    position: absolute;
+    top: -9999px;
+    left: -9999px;
+  }
+  tr {
+    border: 1px solid #E6E6E6;
+  }
+  td {
+    border: none;
+    border-bottom: 1px solid #E6E6E6;
+    position: relative;
+    padding-left: 60%;
+    font-size: 14px;
+  }
+  td:before {
+    position: absolute;
+    top: 0;
+    left: 2px;
+    width: 45%;
+    padding-right: 10px;
+    white-space: nowrap;
+  }
+  td:nth-of-type(1):before {
+    content: "STT";
+  }
+  td:nth-of-type(2):before {
+    content: "MÃ HOÁ ĐƠN/NGÀY MUA HÀNG";
+  }
+  td:nth-of-type(3):before {
+    content: "KHO NHẬN HÀNG";
+  }
+  td:nth-of-type(4):before {
+    content: "SỐ SP";
+  }
+  td:nth-of-type(5):before {
+    content: "TỔNG TIỀN";
+  }
+  td:nth-of-type(6):before {
+    content: "TÌNH TRẠNG";
+  }
+  td:nth-of-type(7):before {
+    content: "THAO TÁC";
+  }
+}
+
+@media screen and (min-width: 1000px) {
+  .order {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -webkit-box-align: start;
+        -ms-flex-align: start;
+            align-items: flex-start;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+  }
+  .order_table {
+    -webkit-box-ordinal-group: 1;
+        -ms-flex-order: 0;
+            order: 0;
+    -ms-flex-preferred-size: 75%;
+        flex-basis: 75%;
+  }
+  .order_customer {
+    margin-top: 20px;
+    -ms-flex-preferred-size: 24%;
+        flex-basis: 24%;
+  }
+  table {
+    width: 100%;
+    border-bottom: 1px solid #E6E6E6;
+    overflow-x: scroll;
+  }
+  table th {
+    border: 1px solid #E6E6E6;
+    padding: 10px;
+    padding: 15px 10px;
+  }
+  table td {
+    text-align: center;
+    padding: 15px 10px;
+    border-left: 1px solid #E6E6E6;
+    border-right: 1px solid #E6E6E6;
+    font-size: 14px;
+    color: #252525;
+  }
+  table td a {
+    color: #252525;
+    font-size: 14px;
+  }
+  table td h5 {
+    display: inline;
+    position: relative;
+  }
+  table td h5::before {
+    position: absolute;
+    content: '01:36 14/03/2015';
+    bottom: -12px;
+    font-size: 12px;
+  }
+}
+/*# sourceMappingURL=order.css.map */

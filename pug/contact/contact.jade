@@ -1,0 +1,68 @@
+doctype html
+html
+    head
+        meta(charset="UTF-8")
+        meta(name="viewport" content="width=device-width, initial-scale=1.0")
+        //-meta(http-equiv="X-UA-Compatible" content="ie=edge")
+        title Contact Us
+        link(rel="stylesheet", href="./css/pages/reset.css")
+        link(rel="stylesheet", href="./css/pages/header.css")
+        link(rel="stylesheet", href="./css/pages/contact.css")
+        link(rel="stylesheet", href="./css/pages/footer.css")
+        script(src="https://kit.fontawesome.com/b4b7fd911f.js")
+    body
+        header
+            include ../header/_headerTop.jade
+            // End Top Header 
+            include ../header/_headerBottom.jade
+            // End Bottom Header
+
+        main
+            .container
+                div
+                    ul.breadcrumb
+                        li
+                            a(href="home.html") Trang chủ /
+                        li
+                            a(href="order.html") &nbsp; Địa chỉ
+                div
+                    h2.title__arrow LIÊN HỆ
+                .contact
+                    .contact_map
+                        iframe(src='https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3833.7163216372587!2d108.21826125544823!3d16.080203994274072!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3142183958fa5ae7%3A0x18b1d5b98cba7120!2zMjAgTMO9IFRoxrDhu51uZyBLaeG7h3QsIFRo4bqhY2ggVGhhbmcsIEjhuqNpIENow6J1LCDEkMOgIE7hurVuZyA1NTAwMDAsIFZp4buHdCBOYW0!5e0!3m2!1svi!2s!4v1566367792619!5m2!1svi!2s' width='100%' frameborder='0' style='border:0' allowfullscreen='')
+                    .contact_address
+                        .contact__logo
+                            img(src="./images/Logocontact.png", alt="Logocontact")
+                        .contact__content
+                            div
+                                i.fas.fa-user
+                                span GiangLe legiang89@gmail.com
+                            div
+                                i.fas.fa-map-marker-alt
+                                span Toà nhà Hà Nội group 442 Đội Cấn, Ba Đình Hà Nội
+                            div
+                                i.fas.fa-phone
+                                span 0375375375
+                        .contact__follow
+                            h6.contact__title FOLLOW US
+                            -var list=["fab fa-twitter", "fab fa-google-plus-g", "fab fa-linkedin-in", "fas fa-wifi"]
+                            each item in list
+                                a(href="#")
+                                    i(class=`${item}`)
+
+                .contact_form
+                    form
+                        -var list = ["Your Name", "Your Email", "Subject", "Your Message"]
+                        each item in list
+                            div
+                                span= item
+                                if item !== "Your Message"
+                                    input(type="text")
+                                else
+                                    textarea(rows="6")
+                        div.contact__btn
+                            button(type="button").btn.btn__cart Gửi
+
+        footer
+            include ../footer/_footer.jade
+            

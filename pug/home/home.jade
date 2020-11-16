@@ -1,0 +1,172 @@
+mixin itemProduct(img,name, newPrice, oldPrice, focus)
+    .product__item(class=`${focus}`)
+        a(href="detailProduct.html").product__img
+            .product__interactive
+                button(type="button").btn.btn__cart
+                    i.fas.fa-heart
+                    | &nbsp; Yêu thích
+                button(type="button").btn.btn__cart 
+                    i.fas.fa-signal
+                    | &nbsp; So sánh
+            img(src=`${"./images/" + img + ".jpg" }` alt=`${img}`)
+        .product__content.product__content--center
+            h3.product__name= name
+            div.product__price
+                span.product__price_new= `${newPrice + " đ"}`
+                span.product__price_old= `${oldPrice + " đ"}`
+            button(type="button" title="ADD TO CART" onclick=`${"toCart(" + img + ", '" + name + "' , '" + newPrice + "'," + 1 + " )"}` style="z-index: 25;").btn.btn__cart ADD TO CART
+
+mixin itemBanner(year,name,img)
+    .banner__item
+        .banner__hover
+            p= year
+            p= name
+        img(src=`${"./images/" + img + ".jpg" }` alt=`${img}`)
+
+doctype html
+html
+    head
+        meta(charset="UTF-8")
+        meta(name="viewport" content="width=device-width, initial-scale=1.0")
+        //-meta(http-equiv="X-UA-Compatible" content="ie=edge")
+        title Home
+        link(rel="stylesheet", href="./css/pages/reset.css")
+        link(rel="stylesheet", href="./css/pages/header.css")
+        link(rel="stylesheet", href="./css/pages/style.css")
+        link(rel="stylesheet", href="./css/pages/footer.css")
+        script(src="https://kit.fontawesome.com/b4b7fd911f.js")
+    body
+        header
+            include ../header/_headerTop.jade
+            // End Top Header
+            .header_bg
+                img(src="./images/Since1980.jpg", alt="bg")
+            include ../header/_headerBottom.jade
+            // End Bottom Header
+
+        main
+            section.intro__home
+                .intro__container
+                    h3.title__block
+                        | Giới thiệu
+                    p
+                        | Lorem ipsum, dolor sit amet consectetur adipisicing elit. 
+                        | Quasi vero, omnis natus excepturi laborum ipsa ad ratione 
+                        | facere mollitia id officiis illo consectetur ullam suscipit 
+                        |quod. Harum, illum fugit. Cupiditate sed repellendus illo veniam
+                        | Lorem ipsum, dolor sit amet consectetur adipisicing elit. 
+                        | Quasi vero, omnis natus excepturi laborum ipsa ad ratione 
+                        | facere mollitia id officiis illo consectetur ullam suscipit 
+                        |quod. Harum, illum fugit. Cupiditate sed repellendus illo veniam
+                        | Quasi vero, omnis natus excepturi laborum ipsa ad ratione 
+                        | facere mollitia id officiis illo consectetur ullam suscipit 
+                        |quod. Harum, illum fugit. Cupiditate sed repellendus illo veniam 
+                        |eveniet.
+                    button(type="button").btn.btn__cart XEM THÊM
+            section.hot.container
+                .hot__content
+                    .hot__img.focus.focus__sale
+                        //img(src="./images/14.jpg", alt="9")
+                    .hot__text
+                        h2.title__arrow RƯỢU NHO NĂM 1987
+                        p.hot__price 330000 đ
+                        button(type="button" title="ADD TO CART" onclick="toCart(14,'RƯỢU NHO NĂM 1987', '330000', 1)").btn.btn__cart ADD TO CART
+                        p.hot__desc
+                            | Một hợp chất có trong rượu vang được gọi là resveratro 
+                            |có khả năng làm tăng tối đa tuổi thọ. Resveratro còn có khả 
+                            |năng ngăn chặn mật độ ôxy hoá của protein béo.
+                        .hot__date
+                            div
+                                p 342
+                                small ngày
+                            div
+                                p 26
+                                small giờ
+                            div
+                                p 50
+                                small phút
+                            div
+                                p 15
+                                small giây
+
+            h3.title__block
+                | SẢN PHẨM MỚI
+
+            section.container
+                .product.product__four
+                    +itemProduct("1","RƯỢU VANG ĐÀ LẠT 1", "370000", "420000", "focus focus__sale")
+                    +itemProduct("2","RƯỢU VANG ĐÀ LẠT 2", "360000", "820000", "focus focus__new")
+                    +itemProduct("3","RƯỢU VANG ĐÀ LẠT 3", "350000", "550000", "focus focus__hot")
+                    +itemProduct("4","RƯỢU VANG ĐÀ LẠT 4", "470000", "520000")
+            
+            section.banner
+                +itemBanner("1987", "RƯỢU", "Layer 19")
+                +itemBanner("1987", "RƯỢU", "Layer 20")
+                +itemBanner("1987", "RƯỢU", "Layer 22")
+                +itemBanner("1987", "RƯỢU", "Layer 27")
+                +itemBanner("1987", "RƯỢU", "Layer 25")
+                +itemBanner("1987", "RƯỢU", "Layer 23")
+                +itemBanner("1987", "RƯỢU", "Layer 29")
+                +itemBanner("1987", "RƯỢU", "Layer 31")
+            
+            h3.title__block
+                | SẢN PHẨM BÁN CHẠY
+
+            section.container
+                .product.product__four
+                    +itemProduct("10","RƯỢU VANG ĐÀ LẠT 5", "370000", "420000", "")
+                    +itemProduct("9","RƯỢU VANG ĐÀ LẠT 6", "360000", "820000", "")
+                    +itemProduct("8","RƯỢU VANG ĐÀ LẠT 7", "350000", "550000", "")
+                    +itemProduct("7","RƯỢU VANG ĐÀ LẠT 8", "470000", "520000", "")
+            
+            section.features.container
+                .news
+                    h3.title__block
+                        | TIN TỨC & BLOG
+                    .news__content
+                        .news__item
+                            div
+                                img(src="./images/Layer 41.jpg", alt="41")
+                            div
+                                h3.news__title VANG THĂNG LONG CLASSIC
+                                p.news__desc Đăng bởi Giangle | 30/06/2015 | 60 bình luận
+                                p.news__detail
+                                    | Vang nổ Thăng Long có hương vị đặc trưng của sản phẩm lên
+                                    |men tự nhiên từ hoa quả với độ rượu nhẹ, bọt ga đầy trắng mịn. 
+                                    |Vang Nổ thăng long tạo cảm giác hương phấn, êm dịu, vui tươi, 
+                                    |sản phẩm được đóng chai dung tích 750ml...
+                                button(type="button").btn.btn__more Read more
+                        .news__item
+                            div
+                                img(src="./images/Layer 42.jpg", alt="41")
+                            div
+                                h3.news__title VANG THĂNG LONG CLASSIC
+                                p.news__desc Đăng bởi Giangle | 30/06/2015 | 60 bình luận
+                                p.news__detail
+                                    | Vang nổ Thăng Long có hương vị đặc trưng của sản phẩm lên
+                                    |men tự nhiên từ hoa quả với độ rượu nhẹ, bọt ga đầy trắng mịn. 
+                                    |Vang Nổ thăng long tạo cảm giác hương phấn, êm dịu, vui tươi, 
+                                    |sản phẩm được đóng chai dung tích 750ml...
+                                button(type="button").btn.btn__more Read more
+                .customer
+                    h3.title__block
+                        | KHÁCH HÀNG
+                    .customer__content
+                        .customer__icon
+                            i.fas.fa-quote-right
+                        .customer__detail
+                            |Vang nổ Thăng Long có hương vị đặc trưng của sản phẩm lên
+                            |men tự nhiên từ hoa quả với độ rượu nhẹ, bọt ga đầy 
+                            |trắng mịn. Vang Nổ thăng long ...
+                        button(type="button").btn.btn__more Read more
+                        .customer__avatar
+                            img(src="./images/Layer 44.jpg", alt="44")
+                        p.customer__name Giang LT
+                        small
+                            i Graphic desgin
+
+        footer
+            include ../footer/_footer.jade
+
+        script(src="./js/main.js")
+

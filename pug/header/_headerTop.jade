@@ -1,0 +1,22 @@
+.header_top
+    .container
+        nav
+            ul
+                -var list=["Tài khoản của tôi", "Trạng thái đơn hàng", "Danh sách ưa thích", "Giỏ hàng" , "Đăng nhập", "Đăng kí"]
+                    each item in list
+                        if item === 'Giỏ hàng'
+                            li
+                            a(href="cart.html")=item
+                        else
+                            li
+                            a(href="#")=item
+        nav
+            ul
+                -var list=["Đăng nhập", "Đăng kí"]
+                    each item in list
+                        li
+                            a(href="#")=item
+        .header_top__search
+            input(type="text" placeholder="Tìm kiếm ở đây ...").header_top__input
+            button(type="button").header_top__button.btn
+                i.fas.fa-search

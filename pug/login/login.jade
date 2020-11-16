@@ -1,0 +1,49 @@
+doctype html
+html
+    head
+        meta(charset="UTF-8")
+        meta(name="viewport" content="width=device-width, initial-scale=1.0")
+        //-meta(http-equiv="X-UA-Compatible" content="ie=edge")
+        title Login
+        link(rel="stylesheet", href="./css/pages/reset.css")
+        link(rel="stylesheet", href="./css/pages/header.css")
+        link(rel="stylesheet", href="./css/pages/login.css")
+        link(rel="stylesheet", href="./css/pages/footer.css")
+        script(src="https://kit.fontawesome.com/b4b7fd911f.js")
+    body
+        header
+            include ../header/_headerTop.jade
+            // End Top Header 
+            include ../header/_headerBottom.jade
+            // End Bottom Header
+        
+        main
+            .container
+                div
+                    ul.breadcrumb
+                        li
+                            a(href="home.html") Trang chủ /
+                        li
+                            a(href="login.html") &nbsp; Đăng nhập
+                div.login
+                    .login__heading
+                        h2.title__arrow ĐĂNG NHẬP
+                        button(type="button").btn.btn__cart ĐĂNG KÝ
+                    .login__content
+                        h4.login__title KHÁCH HÀNG ĐĂNG NHẬP
+                        p.login__desc Nếu bạn có một tài khoản, xin vui lòng đăng nhập
+                        form
+                            div
+                                label(for="inputEmail") Email *
+                                input(type="email" id="inputEmail")
+                            div
+                                label(for="inputPass") Password *
+                                input(type="password" id="inputPass")
+                            div
+                                input(type="checkbox" id="inputCheck")
+                                label(for="inputCheck") Quên mật khẩu
+                            div
+                                button.btn.btn__cart(type='button') ĐĂNG NHẬP
+
+        footer
+            include ../footer/_footer.jade

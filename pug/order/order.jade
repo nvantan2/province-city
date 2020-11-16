@@ -1,0 +1,79 @@
+mixin itemTr(stt)
+    tr
+        td= stt
+        td
+            h5 LEANHGIANG89 - 17/06/2015
+            //- h6
+            //-     small 01:36 14/03/2015
+        td HÀ ĐÔNG
+        td 7
+        td 350.000 đ
+        td Đã thanh toán
+        td
+            a(href="#") Chi tiết  
+            
+doctype html
+html
+    head
+        meta(charset="UTF-8")
+        meta(name="viewport" content="width=device-width, initial-scale=1.0")
+        //-meta(http-equiv="X-UA-Compatible" content="ie=edge")
+        title Order
+        link(rel="stylesheet", href="./css/pages/reset.css")
+        link(rel="stylesheet", href="./css/pages/header.css")
+        link(rel="stylesheet", href="./css/pages/order.css")
+        link(rel="stylesheet", href="./css/pages/footer.css")
+        script(src="https://kit.fontawesome.com/b4b7fd911f.js")
+    body
+        header
+            include ../header/_headerTop.jade
+            // End Top Header 
+            include ../header/_headerBottom.jade
+            // End Bottom Header
+
+        main
+            .container
+                div
+                    ul.breadcrumb
+                        li
+                            a(href="home.html") Trang chủ /
+                        li
+                            a(href="order.html") &nbsp; Danh sách đơn hàng
+                div
+                    h2.title__arrow ĐƠN HÀNG
+                div.order
+                    div.order_table
+                        .order__heading
+                            h4.order__title DANH SÁCH ĐƠN HÀNG
+                            .order__desc
+                                |Trạng thái Tất cả (16)   |   Đã hủy (10)   |   Chưa duyệt (0)   |   Đã duyệt (0)   |   Đã thanh toán-chờ mua hàng (0)   |    Đã mua hàng (0) Hàng đã về-chờ giao hàng (0)  |   Đã kết thúc (6)
+                        table
+                            thead
+                                tr
+                                    -var list = ['STT', 'MÃ HOÁ ĐƠN/NGÀY MUA HÀNG', 'KHO NHẬN HÀNG', 'SỐ SP', 'TỔNG TIỀN', 'TÌNH TRẠNG', 'THAO TÁC']
+                                    each item in list
+                                        th= item
+                            tbody
+                                -var list = ['01', '02', '03', '04', '05', '06']
+                                each item in list
+                                    +itemTr(item)
+                    div.order_customer
+                        h4.order__title THÔNG TIN KHÁCH HÀNG
+                        div
+                            .order__icon
+                                i.fas.fa-user
+                            .order__detail
+                                p GiangLe legiang89@gmail.com
+                        div
+                            .order__icon
+                                i.fas.fa-map-marker-alt
+                            .order__detail Toà nhà Hà Nội group 442 Đội Cấn, Ba Đình Hà Nội
+                        div
+                            .order__icon
+                                i.fas.fa-phone
+                            .order__detail
+                                p 0375375375  
+                        a(href="#") Chi tiết đơn hàng
+
+        footer
+            include ../footer/_footer.jade

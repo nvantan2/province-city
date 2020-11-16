@@ -1,0 +1,138 @@
+* {
+  font-family: 'Times New Roman', Arial;
+}
+
+@media screen and (min-width: 320px) {
+  .container {
+    max-width: 320px;
+    margin: 0 auto;
+  }
+}
+
+@media screen and (min-width: 480px) {
+  .container {
+    max-width: 480px;
+    margin: 0 auto;
+  }
+}
+
+@media screen and (min-width: 576px) {
+  .container {
+    max-width: 540px;
+    margin: 0 auto;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .container {
+    max-width: 720px;
+    margin: 0 auto;
+  }
+}
+
+@media screen and (min-width: 992px) {
+  .container {
+    max-width: 960px;
+    margin: 0 auto;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .container {
+    max-width: 1140px;
+    margin: 0 auto;
+  }
+}
+
+.breadcrumb {
+  overflow: hidden;
+  margin: 20px auto;
+}
+
+.breadcrumb li {
+  float: left;
+}
+
+.breadcrumb li:last-child a {
+  color: #E6AE48;
+}
+
+.breadcrumb a {
+  font-size: 14px;
+  color: #818181;
+}
+
+.title__block {
+  margin: 20px auto;
+  font-size: 21px;
+  color: #000;
+  text-align: center;
+  padding-bottom: 10px;
+  background-image: url(../../images/title-dark.png);
+  background-repeat: no-repeat;
+  background-position: center bottom;
+}
+
+.title__arrow {
+  font-size: 25px;
+  color: #000;
+  display: inline-block;
+  padding-bottom: 15px;
+  background-image: url(../../images/titleleft-dark.png);
+  background-repeat: no-repeat;
+  background-position: left bottom;
+}
+
+.page__img img {
+  width: 100%;
+}
+
+.page__content {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+.page__logo {
+  width: 100px;
+}
+
+.page__logo img {
+  width: 100%;
+}
+
+.page__link {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.page__link li {
+  margin-right: 10px;
+}
+
+.page__link a {
+  color: #252525;
+  text-decoration: underline;
+}
+
+.page__input {
+  border: 1px solid #E6E6E6;
+  padding: 2px 4px;
+}
+
+.page__input input {
+  border: none;
+}
+/*# sourceMappingURL=page404.css.map */

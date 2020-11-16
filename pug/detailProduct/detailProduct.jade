@@ -1,0 +1,131 @@
+mixin itemProduct(img,name, newPrice, oldPrice, focus)
+    a(href="detailProduct.html").product__item(class=`${focus}`)
+        .product__img
+            .product__interactive
+                button(type="button").btn 
+                    i.fas.fa-heart
+                    | &nbsp; Yêu thích
+                button(type="button").btn 
+                    i.fas.fa-signal
+                    | &nbsp; So sánh
+            img(src=`${"./images/" + img + ".jpg" }` alt=`${img}`)
+        .product__content.product__content--center
+            h3.product__name= name
+            div.product__price
+                span.product__price_new= `${newPrice + " đ"}`
+                span.product__price_old= `${oldPrice + " đ"}`
+            button(type="button" title="ADD TO CART").btn.btn__cart ADD TO CART
+
+doctype html
+html
+    head
+        meta(charset="UTF-8")
+        meta(name="viewport" content="width=device-width, initial-scale=1.0")
+        //-meta(http-equiv="X-UA-Compatible" content="ie=edge")
+        title Detail Product
+        link(rel="stylesheet", href="./css/pages/reset.css")
+        link(rel="stylesheet", href="./css/pages/header.css")
+        link(rel="stylesheet", href="./css/pages/detailProduct.css")
+        link(rel="stylesheet", href="./css/pages/footer.css")
+        script(src="https://kit.fontawesome.com/b4b7fd911f.js")
+    body
+        header
+            include ../header/_headerTop.jade
+            // End Top Header 
+            include ../header/_headerBottom.jade
+            // End Bottom Header
+
+        main
+            .container
+                div
+                    ul.breadcrumb
+                        li
+                            a(href="home.html") Trang chủ /
+                        li
+                            a(href="products.html") &nbsp; Sản phẩm /
+                        li
+                            a(href="detailProduct.html") &nbsp; Rượu vang đỏ
+                .content
+                    .gallery
+                        .gallery__list
+                            .gallery__thumb
+                                i.fas.fa-arrow-up
+                            -var list = [1,2,3,4,5]
+                            each item in list
+                                .gallery__thumb
+                                    img(src=`${'./images/' + item + '.jpg'}`, alt=`${item}`)
+                            .gallery__thumb
+                                i.fas.fa-arrow-down
+                        .gallery__preview
+                            img(src="./images/9.jpg", alt="9jpg")
+                    .text
+                        h2.title__arrow RƯỢU NHO NĂM 1987
+                        p.product__price_new.product__price_new--big 300.000 đ
+                        .rating
+                            span
+                                i.fas.fa-star
+                                i.fas.fa-star
+                                i.fas.fa-star
+                                i.fas.fa-star
+                                i.fas.fa-star-half-alt
+                            span
+                                | &nbsp;1 Review(S) | Add Your Review
+                        .custom_color
+                            h5.title MÀU SĂC
+                            div
+                                button.btn.btn__color(type='button')
+                                button.btn.btn__color(type='button')
+                                button.btn.btn__color(type='button')
+                        .custom_param
+                            h5.title KÍCH CỠ
+                            select(name="size")
+                                option(value="1") Loại to
+                                option(value="2") Loại vừa
+                                option(value="3") Loại nhỏ
+                        .custom_count
+                            h5.title SỐ LƯỢNG
+                            div
+                                button(type="button").btn -
+                                span 3
+                                button(type="button").btn +
+                                button(type="button").btn.btn__cart ADD TO CART
+                        .interaction
+                            button.btn.btn__more(type='button')
+                                i.fas.fa-heart
+                                | &nbsp; Yêu thích
+                            button.btn.btn__more(type='button')
+                                i.fas.fa-signal
+                                | &nbsp; So sánh
+                            button.btn.btn__more(type='button')
+                                i.fas.fa-envelope
+                                | &nbsp; Email
+                        .desc
+                            h5.title MÔ TẢ
+                            p Một hợp chất có trong rượu vang được gọi là resveratro có khả năng làm tăng tối đa tuổi thọ. Resveratro còn có khả năng ngăn chặn mật độ ôxy hoá của protein béo.
+                .characteristics
+                    div.characteristics__content
+                        div
+                            input(type="radio", name="inputGroup" id="input1" checked)
+                            label(for="input1") ĐẶC ĐIỂM NỔI BẬT
+                            p ĐẶC ĐIỂM NỔI BẬT ĐẶC ĐIỂM NỔI BẬT
+                        div
+                            input(type="radio", name="inputGroup" id="input2")
+                            label(for="input2") THÔNG TIN SẢN PHẨM
+                            p THÔNG TIN SẢN PHẨM THÔNG TIN SẢN PHẨM
+                        div
+                            input(type="radio", name="inputGroup" id="input3")
+                            label(for="input3") ĐÁNH GIÁ
+                            p ĐÁNH GIÁ ĐÁNH GIÁ ĐÁNH GIÁ ĐÁNH GIÁ
+                    div.characteristics__img
+                        img(src="./images/Layer 74.png", alt="Layer 74")
+                .same
+                    h2.title__block SẢN PHẨM LIÊN QUAN
+                    .product.product__four
+                        +itemProduct("10","RƯỢU VANG ĐÀ LẠT", "370.000", "420.000", "")
+                        +itemProduct("9","RƯỢU VANG ĐÀ LẠT", "360.000", "820.000", "")
+                        +itemProduct("8","RƯỢU VANG ĐÀ LẠT", "350.000", "550.000", "")
+                        +itemProduct("7","RƯỢU VANG ĐÀ LẠT", "470.000", "520.000", "")
+
+        footer
+            include ../footer/_footer.jade
+            

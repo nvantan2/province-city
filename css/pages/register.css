@@ -1,0 +1,183 @@
+* {
+  font-family: 'Times New Roman', Arial;
+}
+
+@media screen and (min-width: 320px) {
+  .container {
+    max-width: 320px;
+    margin: 0 auto;
+  }
+}
+
+@media screen and (min-width: 480px) {
+  .container {
+    max-width: 480px;
+    margin: 0 auto;
+  }
+}
+
+@media screen and (min-width: 576px) {
+  .container {
+    max-width: 540px;
+    margin: 0 auto;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .container {
+    max-width: 720px;
+    margin: 0 auto;
+  }
+}
+
+@media screen and (min-width: 992px) {
+  .container {
+    max-width: 960px;
+    margin: 0 auto;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .container {
+    max-width: 1140px;
+    margin: 0 auto;
+  }
+}
+
+.breadcrumb {
+  overflow: hidden;
+  margin: 20px auto;
+}
+
+.breadcrumb li {
+  float: left;
+}
+
+.breadcrumb li:last-child a {
+  color: #E6AE48;
+}
+
+.breadcrumb a {
+  font-size: 14px;
+  color: #818181;
+}
+
+.title__block {
+  margin: 20px auto;
+  font-size: 21px;
+  color: #000;
+  text-align: center;
+  padding-bottom: 10px;
+  background-image: url(../../images/title-dark.png);
+  background-repeat: no-repeat;
+  background-position: center bottom;
+}
+
+.title__arrow {
+  font-size: 25px;
+  color: #000;
+  display: inline-block;
+  padding-bottom: 15px;
+  background-image: url(../../images/titleleft-dark.png);
+  background-repeat: no-repeat;
+  background-position: left bottom;
+}
+
+.regis {
+  margin-bottom: 20px;
+}
+
+.regis__heading {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-bottom: 15px;
+}
+
+.regis__title {
+  font-size: 18px;
+  color: #000;
+  margin-bottom: 15px;
+}
+
+.regis form.form_top div {
+  margin-bottom: 20px;
+}
+
+.regis form.form_top div:nth-child(1), .regis form.form_top div:nth-child(2), .regis form.form_top div:nth-child(3), .regis form.form_top div:nth-child(4) {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.regis form.form_top div:nth-child(1) label, .regis form.form_top div:nth-child(2) label, .regis form.form_top div:nth-child(3) label, .regis form.form_top div:nth-child(4) label {
+  -ms-flex-preferred-size: 20%;
+      flex-basis: 20%;
+}
+
+.regis form.form_top div:nth-child(1) input, .regis form.form_top div:nth-child(2) input, .regis form.form_top div:nth-child(3) input, .regis form.form_top div:nth-child(4) input {
+  -ms-flex-preferred-size: 78%;
+      flex-basis: 78%;
+  padding: 5px 10px;
+  border: 1px solid #E6E6E6;
+}
+
+.regis form.form_top div:nth-child(5) {
+  padding-left: 22%;
+}
+
+.regis form.form_top div label, .regis form.form_top div p {
+  color: #000;
+  font-size: 14px;
+}
+
+.regis form.form_bottom div {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-bottom: 20px;
+}
+
+.regis form.form_bottom div input {
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  padding: 5px 10px;
+  border: 1px solid #E6E6E6;
+}
+
+.regis form.form_bottom div:last-child {
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+}
+
+.regis form.form_bottom div:last-child button {
+  margin-left: 10px;
+}
+
+@media screen and (min-width: 768px) {
+  .regis__content {
+    border: 1px solid #E6E6E6;
+    padding: 50px;
+  }
+}
+/*# sourceMappingURL=register.css.map */

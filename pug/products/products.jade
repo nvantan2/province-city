@@ -1,0 +1,107 @@
+mixin itemProduct(img,name, newPrice, oldPrice)
+    .product__item
+        a(href="detailProduct.html").product__img
+            .product__interactive
+                button(type="button").btn.btn__cart
+                    i.fas.fa-heart
+                    | &nbsp; Yêu thích
+                button(type="button").btn.btn__cart 
+                    i.fas.fa-signal
+                    | &nbsp; So sánh
+            img(src=`${"./images/" + img + ".jpg" }` alt=`${img}`)
+        .product__content.product__content--center
+            h3.product__name= name
+            div.product__price
+                span.product__price_new= `${newPrice + " đ"}`
+                span.product__price_old= `${oldPrice + " đ"}`
+            button(type="button" title="ADD TO CART" onclick=`${"toCart(" + img + ", '" + name + "' , '" + newPrice + "'," + 1 + " )"}` style="z-index: 25;").btn.btn__cart ADD TO CART
+
+doctype html
+html
+    head
+        meta(charset="UTF-8")
+        meta(name="viewport" content="width=device-width, initial-scale=1.0")
+        //-meta(http-equiv="X-UA-Compatible" content="ie=edge")
+        title Products
+        link(rel="stylesheet", href="./css/pages/reset.css")
+        link(rel="stylesheet", href="./css/pages/header.css")
+        link(rel="stylesheet", href="./css/pages/products.css")
+        link(rel="stylesheet", href="./css/pages/footer.css")
+        script(src="https://kit.fontawesome.com/b4b7fd911f.js")
+    body
+        header
+            include ../header/_headerTop.jade
+            // End Top Header 
+            include ../header/_headerBottom.jade
+            // End Bottom Header
+
+        main.container
+            div
+                ul.breadcrumb
+                    li
+                        a(href="home.html") Trang chủ /
+                    li
+                        a(href="products.html") &nbsp; Sản phẩm
+                    //- li
+                    //-     a(href="detailProduct.html") &nbsp; Rượu vang đỏ
+            .banner
+                img(src="./images/Layer781X.png", alt="Layer781X")
+            .wrapper
+                section.side_bar
+                    .side_bar__item
+                        h2.title__arrow DANH MỤC SẢN PHẨM
+                        a(href="#")
+                            i.fas.fa-bars
+                        h3.side_bar__title RƯỢU NGOẠI
+                        ul
+                            -var list = ["Rượu Chivas (26)", "Hàng độc - Rượu độc đáo (36)", "Johnnie Walker (46)", "Rượu Whisky (24)", "Rượu Remy Martin (16)", "Rượu Glenmorangie  (11)", "Rượu Ballantine's (7)", "Rượu Cognac (40)", "Rượu Vodka (93)", "Rượu Macallan (19)", "Rượu Brandy (62)","Rượu Hennessy (20)", "RượuGin - Tequila - Liqueur - Rượu mùi (36)", "Rượu Champagne (12)","Rượu Single malt Scotch whisky (47)", "Rượu Spirits (4)"]
+                            each item in list
+                                li
+                                    a(href="#")= item
+                        h3.side_bar__title RƯỢU VANG
+                        ul
+                            -var list = ["Rượu Vang Pháp (44)", "Rượu Vang Úc (26)", "Rượu Vang Mỹ (20)", "Rượu Vang Chile (21)", "Rượu Vang Philip (20)", "Rượu Vang Nam Phi (23)", "Rượu Vang Ý (26)" ]
+                            each item in list
+                                li
+                                    a(href="#")= item
+                    .side_bar__item
+                        h2.title__arrow SO SÁNH SẢN PHẨM
+                        p Bạn chưa có sản phẩm nào để so sánh
+                    .side_bar__item
+                        h2.title__arrow TAG SẢN PHẨM
+                        div
+                            -var listbtn = ["Đồng hồ", "Túi", "Phụ kiện", "Giày", "Sandal", "Áo sơ mi", "Nước hoa", "Trẻ em", "Thời trang nữ"]
+                            each itembtn in listbtn
+                                button.btn.btn__list(type='button' title=`${itembtn}`)= itembtn
+                    .side_bar__item
+                        img(src="./images/ads.png", alt="ads")
+
+                section.content
+                    .sort_bar
+                        .sort_bar__view
+                            a(href="#")
+                                i.fas.fa-th
+                            a(href="productsList.html")
+                                i.fas.fa-th-list
+                        nav.sort_bar__pagination
+                            ul
+                                li
+                                    a(href="#")
+                                        i.fas.fa-caret-left
+                                -var list = [1,2,3,4,5]
+                                each item in list
+                                    li
+                                        a(href="#")= item
+                                li
+                                    a(href="#")
+                                        i.fas.fa-caret-right
+
+                    .product.product__three
+                        -var list = ['1','2','3','4','5','6','7','8','9']
+                        each item in list
+                            +itemProduct(`${item}`, `${"RƯỢU VANG ĐÀ LẠT " + item}`, "300000 đ", "420000 đ")
+                        
+        footer
+            include ../footer/_footer.jade
+
+        script(src="./js/main.js")

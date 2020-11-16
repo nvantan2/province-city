@@ -1,0 +1,64 @@
+doctype html
+html
+    head
+        meta(charset="UTF-8")
+        meta(name="viewport" content="width=device-width, initial-scale=1.0")
+        //-meta(http-equiv="X-UA-Compatible" content="ie=edge")
+        title Register
+        link(rel="stylesheet", href="./css/pages/reset.css")
+        link(rel="stylesheet", href="./css/pages/header.css")
+        link(rel="stylesheet", href="./css/pages/register.css")
+        link(rel="stylesheet", href="./css/pages/footer.css")
+        script(src="https://kit.fontawesome.com/b4b7fd911f.js")
+    body
+        header
+            include ../header/_headerTop.jade
+            // End Top Header 
+            include ../header/_headerBottom.jade
+            // End Bottom Header
+
+        main
+            .container
+                div
+                    ul.breadcrumb
+                        li
+                            a(href="home.html") Trang chủ /
+                        li
+                            a(href="register.html") &nbsp; Đăng ký
+                div.regis
+                    .regis__heading
+                        h2.title__arrow ĐĂNG KÝ
+                        button(type="button").btn.btn__cart ĐĂNG NHẬP
+                    .regis__content
+                        h4.regis__title THÔNG TIN CÁ NHÂN
+                        form.form_top
+                            div
+                                label(for="inputName1") Tên trước *
+                                input(type="text" id="inputName1")
+                            div
+                                label(for="inputName2") Tên sau *
+                                input(type="password" id="inputName2")
+                            div
+                                label(for="inputEmail") Email *
+                                input(type="email" id="inputEmail")
+                            div
+                                label(for="inputPass") Password *
+                                input(type="password" id="inputPass")
+                            div
+                                input(type="checkbox" id="inputCheck")
+                                label(for="inputCheck") Quên mật khẩu
+
+                        h4.regis__title THÔNG TIN ĐĂNG NHẬP
+                        form.form_bottom
+                            div
+                                label(for="inputPass1") Mật khẩu *
+                                input(type="password" id="inputPass1")
+                            div
+                                label(for="inputPass2") Xác nhận mật khẩu *
+                                input(type="password" id="inputPass2")
+                            div
+                                button.btn.btn__cart(type='button') GỬI
+                                button.btn.btn__cart(type='button') QUAY LẠI
+
+        footer
+            include ../footer/_footer.jade

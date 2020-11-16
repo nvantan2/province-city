@@ -1,0 +1,157 @@
+* {
+  font-family: 'Times New Roman', Arial;
+}
+
+@media screen and (min-width: 320px) {
+  .container {
+    max-width: 320px;
+    margin: 0 auto;
+  }
+}
+
+@media screen and (min-width: 480px) {
+  .container {
+    max-width: 480px;
+    margin: 0 auto;
+  }
+}
+
+@media screen and (min-width: 576px) {
+  .container {
+    max-width: 540px;
+    margin: 0 auto;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .container {
+    max-width: 720px;
+    margin: 0 auto;
+  }
+}
+
+@media screen and (min-width: 992px) {
+  .container {
+    max-width: 960px;
+    margin: 0 auto;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .container {
+    max-width: 1140px;
+    margin: 0 auto;
+  }
+}
+
+.breadcrumb {
+  overflow: hidden;
+  margin: 20px auto;
+}
+
+.breadcrumb li {
+  float: left;
+}
+
+.breadcrumb li:last-child a {
+  color: #E6AE48;
+}
+
+.breadcrumb a {
+  font-size: 14px;
+  color: #818181;
+}
+
+.title__block {
+  margin: 20px auto;
+  font-size: 21px;
+  color: #000;
+  text-align: center;
+  padding-bottom: 10px;
+  background-image: url(../../images/title-dark.png);
+  background-repeat: no-repeat;
+  background-position: center bottom;
+}
+
+.title__arrow {
+  font-size: 25px;
+  color: #000;
+  display: inline-block;
+  padding-bottom: 15px;
+  background-image: url(../../images/titleleft-dark.png);
+  background-repeat: no-repeat;
+  background-position: left bottom;
+}
+
+.login {
+  margin-bottom: 20px;
+}
+
+.login__heading {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-bottom: 10px;
+}
+
+.login__title {
+  font-size: 18px;
+  color: #000;
+}
+
+.login__desc {
+  font-size: 14px;
+  color: #000;
+  margin: 20px 0;
+}
+
+.login form div {
+  margin-bottom: 20px;
+}
+
+.login form div:nth-child(1), .login form div:nth-child(2) {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.login form div:nth-child(1) label, .login form div:nth-child(2) label {
+  -ms-flex-preferred-size: 20%;
+      flex-basis: 20%;
+}
+
+.login form div:nth-child(1) input, .login form div:nth-child(2) input {
+  -ms-flex-preferred-size: 78%;
+      flex-basis: 78%;
+  padding: 5px 10px;
+  border: 1px solid #E6E6E6;
+}
+
+.login form div:nth-child(3), .login form div:nth-child(4) {
+  padding-left: 22%;
+}
+
+.login form div label, .login form div p {
+  color: #000;
+  font-size: 14px;
+}
+
+@media screen and (min-width: 768px) {
+  .login__content {
+    border: 1px solid #E6E6E6;
+    padding: 50px;
+  }
+}
+/*# sourceMappingURL=login.css.map */

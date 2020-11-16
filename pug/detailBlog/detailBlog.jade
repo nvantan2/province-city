@@ -1,0 +1,122 @@
+mixin listPost(img, title)
+    li
+        a(href="#")
+            img(src=`${"./images/" + img + ".png"}`, alt=`${img}`)
+        div
+            a(href="#")= title
+            p 
+                i.far.fa-calendar
+                |12 /06/2015
+
+mixin commentItem(content)
+    .comment__item
+        .comment__title
+            div
+                span
+                    i
+                        |Bình luận bởi Giangle&nbsp;
+                span
+                    i
+                        | &nbsp; | &nbsp;&nbsp;Cách đây 4 giờ
+            a(href="#") Trả lời
+        .comment__content
+            p= content
+
+doctype html
+html
+    head
+        meta(charset="UTF-8")
+        meta(name="viewport" content="width=device-width, initial-scale=1.0")
+        //-meta(http-equiv="X-UA-Compatible" content="ie=edge")
+        title Detail Blog
+        link(rel="stylesheet", href="./css/pages/reset.css")
+        link(rel="stylesheet", href="./css/pages/header.css")
+        link(rel="stylesheet", href="./css/pages/detailBlog.css")
+        link(rel="stylesheet", href="./css/pages/footer.css")
+        script(src="https://kit.fontawesome.com/b4b7fd911f.js")
+    body
+        header
+            include ../header/_headerTop.jade
+            // End Top Header 
+            include ../header/_headerBottom.jade
+            // End Bottom Header
+
+        main.container
+            div
+                ul.breadcrumb
+                    li
+                        a(href="home.html") Trang chủ /
+                    li
+                        a(href="blog.html") &nbsp; Blog
+            div
+                h2.title__arrow BLOG
+                .blog
+                    section.side_bar
+                        .side_bar__item
+                            h4.side_bar__title BÀI VIẾT MỚI NHẤT
+                            nav
+                                ul
+                                    +listPost("Layer 78", "CÁCH SẮP XẾP NỘI THẤT TRONG NHÀ")
+                                    +listPost("Layer 79", "CÁCH SẮP XẾP NỘI THẤT TRONG NHÀ")
+                                    +listPost("Layer 180 copy", "CÁCH SẮP XẾP NỘI THẤT TRONG NHÀ")
+                        .side_bar__item
+                            h4.side_bar__title BLOG TAGS
+                            div
+                                -var listbtn = ["Đồng hồ", "Túi", "Phụ kiện", "Giày", "Sandal", "Áo sơ mi", "Nước hoa", "Trẻ em", "Thời trang nữ"]
+                            each itembtn in listbtn
+                                button.btn.btn__list(type='button' title=`${itembtn}`)= itembtn
+                        .side_bar__item
+                            h4.side_bar__title LATEST VIDEO
+                    //END SIDE_BAR
+                    sectioin.blog__content
+                        .blog__img
+                            img(src="./images/Layer 78 copy.png", alt="Layerd78")
+                        h3.blog__title VANG THĂNG LONG CLASSIC
+                        h6.blog__time Đăng bởi Giangle | 30/06/2015 | 60 bình luận
+                        p.blog__detail
+                            |Vang nổ Thăng Long có hương vị đặc trưng của sản phẩm lên men tự nhiên từhoa quả với độ rượu nhẹ, bọt ga đầy trắng mịn. Vang Nổ thăng long tạo cảmgiác hương phấn, êm dịu, vui tươi, sản phẩm được đóng chai dung tích 750ml.Vang nổ Thăng Long có hương vị đặc trưng của sản phẩm lên men tự nhiên từ hoa quả với độ rượu nhẹ, bọt ga đầy trắng mịn. Vang Nổ thăng long tạo cảm giác hương phấn, êm dịu, vui tươi, sản phẩm được đóng chai dung tích 750ml...
+                        h3.blog__title.blog__title--small
+                            i
+                                |ĐÓNG GÓP Ý KIẾN
+                        form
+                            div
+                                label(for="inputName") 
+                                    i Name
+                                    span &nbsp;*
+                                input(type="text" id="inputName")
+                            div
+                                label(for="inputEmail") 
+                                    i Email
+                                    span &nbsp;*
+                                input(type="email" id="inputEmail")
+                            div
+                                label(for="inputt") 
+                                    i Ý kiến
+                                    span &nbsp;*
+                                textarea#inputt(rows="6")
+                            div
+                                button.btn(type="button") GỬI Ý KIẾN
+                        .comment
+                            h3.blog__title.blog__title--small
+                                |BÌNH LUẬN (3)
+                            -var content = "Có lẽ bởi tính chất 'ăn gian' vóc dáng và vô cùng thoải mái, gợi cảm mà cả 2 dạng trang phục này được áp dụng nhiều nhất trong street style tuần qua ,chọn cho mình bộ trang phục đơn sắc với thiết kế cổ yếm, ống rộng - vừa thoải mái tối đa lại không kém phần gợi cảm, kết hợp cùng đôi giày quai chữ T tôn dáng"
+                            +commentItem(content)
+                            +commentItem(content)
+                            +commentItem(content)
+
+                            .comment__pagination
+                                nav
+                                    ul
+                                        li
+                                            a(href="#").fixed
+                                                i.fas.fa-chevron-left
+                                        -var list = [1,2,3]
+                                        each item in list
+                                            li
+                                                a(href="#")= item
+                                        li
+                                            a(href="#").fixed
+                                                i.fas.fa-chevron-right
+                                                
+        footer
+            include ../footer/_footer.jade

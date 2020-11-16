@@ -1,0 +1,68 @@
+//- mixin itemTr(img, name, price, count)
+//-     tr
+//-         td
+//-             img(src=`${'./images/' + img + '.jpg'}`, alt=`${img}`)
+//-         td= name
+//-         td= price
+//-         td= count
+//-         td= price
+//-         td
+//-             i.fas.fa-trash-alt
+
+doctype html
+html
+    head
+        meta(charset="UTF-8")
+        meta(name="viewport" content="width=device-width, initial-scale=1.0")
+        //-meta(http-equiv="X-UA-Compatible" content="ie=edge")
+        title Cart
+        link(rel="stylesheet", href="./css/pages/reset.css")
+        link(rel="stylesheet", href="./css/pages/header.css")
+        link(rel="stylesheet", href="./css/pages/cart.css")
+        link(rel="stylesheet", href="./css/pages/footer.css")
+        script(src="https://kit.fontawesome.com/b4b7fd911f.js")
+    body(onload="showCart()")
+        header
+            include ../header/_headerTop.jade
+            // End Top Header 
+            include ../header/_headerBottom.jade
+            // End Bottom Header
+        
+        main
+            .container
+                div
+                    ul.breadcrumb
+                        li
+                            a(href="home.html") Trang chủ /
+                        li
+                            a(href="products.html") &nbsp; Sản phẩm /
+                        li
+                            a(href="detailProduct.html") &nbsp; Rượu vang đỏ
+                div
+                    h2.title__arrow RƯỢU NHO NĂM 1987
+                    #myModal.modal
+                        .modal-content
+                            span.close &times;
+                            p.modal__desc
+                            .modal__btn
+                                button.btn.btn__agree(type='button') Xoá
+                                button.btn.btn__cancel(type='button') Huỷ
+                    table
+                        thead
+                            tr
+                                -var list = ["HÌNH ẢNH", "TÊN SẢN PHẨM", "GIÁ", "SỐ LƯỢNG", "TỔNG SỐ", "XOÁ"]
+                                each item in list
+                                    th= item
+                        tbody
+                            //- -var list = ['1', '2', '3', '4']
+                            //- each item in list
+                            //-     +itemTr(`${item}`,"RƯỢU VANG ĐỎ", "300.000 đ", "1")
+                    div.cart_btn
+                        a.btn.btn__cart(href="products.html") TIẾP TỤC MUA HÀNG
+                        button.btn.btn__cart.cancelCart(type='button') XOÁ
+                        a.btn.btn__cart(href="checkout.html") CẬP NHẬP
+
+        footer
+            include ../footer/_footer.jade
+
+        script(src="./js/main.js")

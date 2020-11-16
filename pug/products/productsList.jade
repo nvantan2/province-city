@@ -1,0 +1,106 @@
+mixin itemProduct(img, name, newprice)
+    a(href="detailProduct.html").product_list__item
+        .product__img
+            img(src=`${"./images/" + img + ".jpg"}`, alt=`${img}`)
+        .product__content
+            p.product__name.product__name--big= name
+            .product__price
+                span.product__price_new.product__price_new--big= newprice
+            p.product__desc
+                |Một hợp chất có trong rượu vang được gọi là resveratro có khả năng làm tăng tối đa tuổi thọ. Resveratro còn có khả năng ngăn chặn mật độ ôxy hoá của protein béo.
+            div
+                button(type="button").btn.btn__cart ADD TO CART
+                button.btn.btn__more(type='button')
+                    i.fas.fa-heart
+                    | &nbsp; Yêu thích
+                button.btn.btn__more(type='button')
+                    i.fas.fa-signal
+                    | &nbsp; So sánh
+
+doctype html
+html
+    head
+        meta(charset="UTF-8")
+        meta(name="viewport" content="width=device-width, initial-scale=1.0")
+        //-meta(http-equiv="X-UA-Compatible" content="ie=edge")
+        title Products
+        link(rel="stylesheet", href="./css/pages/reset.css")
+        link(rel="stylesheet", href="./css/pages/header.css")
+        link(rel="stylesheet", href="./css/pages/productsList.css")
+        link(rel="stylesheet", href="./css/pages/footer.css")
+        script(src="https://kit.fontawesome.com/b4b7fd911f.js")
+    body
+        header
+            include ../header/_headerTop.jade
+            // End Top Header 
+            include ../header/_headerBottom.jade
+            // End Bottom Header
+        main.container
+            div
+                ul.breadcrumb
+                    li
+                        a(href="home.html") Trang chủ /
+                    li
+                        a(href="products.html") &nbsp; Sản phẩm
+                    //- li
+                    //-     a(href="detailProduct.html") &nbsp; Rượu vang đỏ
+            .banner
+                img(src="./images/Layer781X.png", alt="Layer781X")
+            .wrapper
+                section.side_bar
+                    .side_bar__item
+                        h2.title__arrow DANH MỤC SẢN PHẨM
+                        a(href="#")
+                            i.fas.fa-bars
+                        h3.side_bar__title RƯỢU NGOẠI
+                        ul
+                            -var list = ["Rượu Chivas (26)", "Hàng độc - Rượu độc đáo (36)", "Johnnie Walker (46)", "Rượu Whisky (24)", "Rượu Remy Martin (16)", "Rượu Glenmorangie  (11)", "Rượu Ballantine's (7)", "Rượu Cognac (40)", "Rượu Vodka (93)", "Rượu Macallan (19)", "Rượu Brandy (62)","Rượu Hennessy (20)", "RượuGin - Tequila - Liqueur - Rượu mùi (36)", "Rượu Champagne (12)","Rượu Single malt Scotch whisky (47)", "Rượu Spirits (4)"]
+                            each item in list
+                                li
+                                    a(href="#")= item
+                        h3.side_bar__title RƯỢU VANG
+                        ul
+                            -var list = ["Rượu Vang Pháp (44)", "Rượu Vang Úc (26)", "Rượu Vang Mỹ (20)", "Rượu Vang Chile (21)", "Rượu Vang Philip (20)", "Rượu Vang Nam Phi (23)", "Rượu Vang Ý (26)" ]
+                            each item in list
+                                li
+                                    a(href="#")= item
+                    .side_bar__item
+                        h2.title__arrow SO SÁNH SẢN PHẨM
+                        p Bạn chưa có sản phẩm nào để so sánh
+                    .side_bar__item
+                        h2.title__arrow TAG SẢN PHẨM
+                        div
+                            -var listbtn = ["Đồng hồ", "Túi", "Phụ kiện", "Giày", "Sandal", "Áo sơ mi", "Nước hoa", "Trẻ em", "Thời trang nữ"]
+                            each itembtn in listbtn
+                                button.btn.btn__list(type='button' title=`${itembtn}`)= itembtn
+                    .side_bar__item
+                        img(src="./images/ads.png", alt="ads")
+
+                section.content
+                    .sort_bar
+                        .sort_bar__view
+                            a(href="products.html")
+                                i.fas.fa-th
+                            a(href="#")
+                                i.fas.fa-th-list
+                        nav.sort_bar__pagination
+                            ul
+                                li
+                                    a(href="#")
+                                        i.fas.fa-caret-left
+                                -var list = [1,2,3,4,5]
+                                each item in list
+                                    li
+                                        a(href="#")= item
+                                li
+                                    a(href="#")
+                                        i.fas.fa-caret-right
+
+                    .product
+                        +itemProduct("1", "RƯỢU VANG ĐÀ LẠT", "300.000 đ", "420.000 đ")
+                        +itemProduct("2", "RƯỢU VANG ĐÀ LẠT", "300.000 đ", "420.000 đ")
+                        +itemProduct("3", "RƯỢU VANG ĐÀ LẠT", "300.000 đ", "420.000 đ")
+                        +itemProduct("4", "RƯỢU VANG ĐÀ LẠT", "300.000 đ", "420.000 đ")
+
+        footer
+            include ../footer/_footer.jade
