@@ -149,6 +149,7 @@
 .header_bottom {
   background-color: #000;
   position: relative;
+  display: none;
 }
 
 .header_bottom nav {
